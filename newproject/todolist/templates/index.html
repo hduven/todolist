@@ -1,0 +1,21 @@
+{% extends "template.html" %}
+{% block content %}
+	{% if latest_category_list %}
+		<ul>
+			{% for category in latest_category_list %}
+				<li>
+					<a href="{% url 'todolist:category_detail' category.id %}">
+						{{ category.name }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>hic bisey girmedin.</p>
+	{% endif %}
+	<form method="post" action="{% url 'todolist:category_save' %}">
+		{% csrf_token %}
+		<input type="text" name="name" />
+		<button type="submit">Kaydet</button>
+	</form>
+{% endblock %}

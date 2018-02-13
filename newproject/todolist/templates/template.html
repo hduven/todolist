@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<meta charset="utf-8">
+	<title>{% if title %}{{ title }}{% else %}Todolist{% endif %}</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'todolist/style.css' %}" />
+</head>
+<body>
+	<ul id="breadcrumb">
+		<li>
+			<a href="/">
+				Todolist
+			</a>
+		</li>
+		{% block breadcrumb %}{% endblock %}
+	</ul>
+
+	<div id="content">
+		{% block content %}{% endblock %}
+	</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+html, body {
+    height: 100%;
+}
+
+body {
+	background: white url("images/background.gif") no-repeat right bottom;
+}
+/* # işareti belirli bir id deki ul yeli getiriyor . */
+#breadcrumb {
+	list-style: none;
+	padding: 0;
+	overflow: hidden;
+}
+
+#breadcrumb > li {
+	float: left;
+	padding-right: 10px;
+}

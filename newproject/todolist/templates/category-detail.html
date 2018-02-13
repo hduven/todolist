@@ -1,0 +1,22 @@
+{% extends "template.html" %}
+
+{% block breadcrumb %}
+	<li>
+		<a href="">
+			{{ category.name }}
+		</a>
+	</li>
+{% endblock %}
+
+{% block content %}
+	<ul>
+		{% for todo in category.todo_set.all %}
+			<li>
+				<a href="{% url 'todolist:todo_detail' todo.id %}">
+					{{ todo.title }}
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
+

@@ -1,0 +1,21 @@
+{% extends "template.html" %}
+
+{% block breadcrumb %}
+	<li>
+		<a href="{% url 'todolist:category_detail' todo.category.id %}">
+			{{ todo.category.name }}
+		</a>
+	</li>
+	<li>
+		<a href="{% url 'todolist:todo_detail' todo.id %}">
+			{{ todo.title }}
+		</a>
+	</li>
+{% endblock %}
+
+{% block content %}
+	{% if todo.image %}
+		<img src="{{ todo.image.url }}" style="max-width: 200px; max-height: 200px;">
+	{% endif %}
+    <p>{{ todo.description }}</p>
+{% endblock %}
